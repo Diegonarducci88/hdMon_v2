@@ -62,14 +62,14 @@ if [[ "$*" == "full" ]] ; then
 		smartctl -s on /dev/$i
 		smartctl -S on /dev/$i
 		smartctl -o on /dev/$i
-		#smartctl -t short /dev/$i
+		smartctl -t short /dev/$i
 	
 		echo "modo full"
 		modo="full"
 	done
 fi
 
-#sleep 180
+sleep 180
 
 chmod 666 $logfile
 hora=$(date)
@@ -81,7 +81,7 @@ then
 	if [ -e "$q" ]; then
 		nada=""
 	else
-		echo "o zenity nao esta instalado, o programa nao informara na teal caso encontre algum erro" >> $logfile
+		echo "o zenity nao esta instalado, o programa nao informara na tela caso encontre algum erro" >> $logfile
 	fi
 	iniciar
 else
