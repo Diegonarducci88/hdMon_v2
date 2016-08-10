@@ -20,7 +20,6 @@
 hds="sda sdb" # coloque os dispositivos separados por espaço.
 logfile="$HOME/log-hd.log" # arquivo de log
 modo="simples"
-
 iniciar() {
 for i in $hds
 do	
