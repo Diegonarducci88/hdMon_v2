@@ -2,7 +2,7 @@
 
 #### Criado por Diego Narducci Arioza
 #### Versao 2.0 beta
-#### Next Version -> Otimização do codigo, automatizaçao do script para rodar como daemon
+#### Next Version -> Otimização do codigo, automatizaçao do script para rodar como daemon, verificar temperatura
 
 #### O script apos executado, executa alguns testes no hd usando "smartctl", aguarda 3 minutos, e gera um log em "~/log-hd.log"
 #### Se houver algum erro o usuario sera informado na tela pelo "zenity" 
