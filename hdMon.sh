@@ -13,7 +13,7 @@
 # requerimento: executar como root
 
 particoes="sda sdb" # coloque os dispositivos separados por espaço.
-logfile="/home/diego/log-hd.log" # arquivo de log
+logfile="$HOME/log-hd.log" # arquivo de log
 modo="simples"
 
 iniciar() {
