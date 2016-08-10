@@ -17,12 +17,12 @@
 
 # testado no ubuntu 16.04
 
-particoes="sda sdb" # coloque os dispositivos separados por espaço.
+hds="sda sdb" # coloque os dispositivos separados por espaço.
 logfile="$HOME/log-hd.log" # arquivo de log
 modo="simples"
 
 iniciar() {
-for i in $particoes
+for i in $hds
 do	
 	check1=$(smartctl -H /dev/$i | grep "result" | sed 's/.*lt: //g') # verifica saida do cmd "smartctl -H" e retorna msg se encontrar erro.
 		if [[ $check1 == "PASSED" ]]; then
@@ -60,7 +60,7 @@ done
 }
 ###### INICIO DO PROGRAMA ########
 if [[ "$*" == "full" ]] ; then
-	for i in $particoes; do
+	for i in $hds; do
 		smartctl -s on /dev/$i
 		smartctl -S on /dev/$i
 		smartctl -o on /dev/$i
