@@ -22,7 +22,6 @@ logfile="$HOME/log-hd.log" # arquivo de log
 modo="simples"
 
 iniciar() {
-
 for i in $particoes
 do	
 	check1=$(smartctl -H /dev/$i | grep "result" | sed 's/.*lt: //g') # verifica saida do cmd "smartctl -H" e retorna msg se encontrar erro.
@@ -59,9 +58,7 @@ do
 	done
 done
 }
-
 ###### INICIO DO PROGRAMA ########
-
 if [[ "$*" == "full" ]] ; then
 	for i in $particoes; do
 		smartctl -s on /dev/$i
@@ -74,7 +71,6 @@ if [[ "$*" == "full" ]] ; then
 	done
 	sleep 180
 fi
-
 chmod 666 $logfile
 hora=$(date)
 echo -e " Log $hora - Teste $modo \n" >> $logfile
@@ -92,7 +88,6 @@ else
 	zenity --info --text="O programa \"monHD\" deve ser executado pelo root" --display=:0.0
 	echo " O programa \"monHD\" deve ser executado pelo root" >> $logfile
 fi
-
 echo -e "======================================================================================" >> $logfile
 echo "Programa executado com sucesso, verifique o log: \"$logfile\" para mais informações."
 echo "O programa só reportará no log se houver erros encontrados..."
