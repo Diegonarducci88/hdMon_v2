@@ -91,3 +91,4 @@ fi
 
 echo -e "======================================================================================" >> $logfile
 echo "Programa executado com sucesso, verifique o log: \"$logfile\" para mais informações."
+echo "O programa só reportará no log se houver erros encontrados..."
