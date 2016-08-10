@@ -9,8 +9,13 @@
 
 #### Modos de execucao -> sem parametro -> testa os atributos smart dos hds e testes simples
 #		       -> "full"-> executa o selftest short em todos os hds, aguarda 180 segundos e verifica as saidas
+#exemplo 1: "monHD.sh"
+#exemplo 2: "monHD.sh full"
+#
 # requerimento: zenity 
 # requerimento: executar como root
+
+# testado no ubuntu 16.04
 
 particoes="sda sdb" # coloque os dispositivos separados por espaço.
 logfile="$HOME/log-hd.log" # arquivo de log
@@ -67,9 +72,8 @@ if [[ "$*" == "full" ]] ; then
 		echo "modo full"
 		modo="full"
 	done
+	sleep 180
 fi
-
-sleep 180
 
 chmod 666 $logfile
 hora=$(date)
